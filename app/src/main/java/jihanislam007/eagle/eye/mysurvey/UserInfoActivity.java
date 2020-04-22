@@ -39,6 +39,18 @@ public class UserInfoActivity extends AppCompatActivity {
             }
         });
 
+        binding.report.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Savedata();
+                //Toast.makeText(UserInfoActivity.this, "i am ok", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(),SurveyReportActivity.class));
+
+
+            }
+        });
+
     }
 
     private void Savedata() {
