@@ -2,10 +2,14 @@ package jihanislam007.eagle.eye.mysurvey;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.databinding.adapters.AdapterViewBindingAdapter;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import io.realm.Realm;
@@ -14,10 +18,17 @@ import jihanislam007.eagle.eye.mysurvey.DB.Model.UserInfo;
 import jihanislam007.eagle.eye.mysurvey.DB.MyApplication;
 import jihanislam007.eagle.eye.mysurvey.databinding.ActivityUserInfoBinding;
 
-public class UserInfoActivity extends AppCompatActivity {
+public class UserInfoActivity extends AppCompatActivity implements
+        AdapterView.OnItemSelectedListener {
 
     ActivityUserInfoBinding binding;
-    Realm realm;
+
+    ArrayAdapter aa;
+    String[] gender = { "Select your gender","Male", "Female"};
+
+    String user_mobile;
+    String user_age;
+    String user_gender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +36,18 @@ public class UserInfoActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_user_info);
         binding = DataBindingUtil.setContentView(UserInfoActivity.this, R.layout.activity_user_info);
 
-        realm  = Realm.getDefaultInstance();
+        aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,gender);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        binding.userInfoSpiGender.setAdapter(aa);
+        binding.userInfoSpiGender.setOnItemSelectedListener(this);
+
+
 
         binding.userInfoBtnDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Savedata();
-                //Toast.makeText(UserInfoActivity.this, "i am ok", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
-
 
             }
         });
@@ -43,8 +56,6 @@ public class UserInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Savedata();
-                //Toast.makeText(UserInfoActivity.this, "i am ok", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(),SurveyReportActivity.class));
 
 
@@ -53,25 +64,34 @@ public class UserInfoActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        user_gender = aa.getItem(position).toString();
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+
     private void Savedata() {
 
-        final String user_mobile = binding.userInfoEtMobileNumber.getText().toString().trim();
-        final String user_age = binding.userInfoEtAge.getText().toString().trim();
-        final String user_gender = "gender given".toString().trim();
+        user_mobile = binding.userInfoEtMobileNumber.getText().toString();
+        user_age = binding.userInfoEtAge.getText().toString();
 
-        MyApplication.getRealm().beginTransaction();
 
-        UserInfo userInfo = new UserInfo();
-        
-        userInfo.setUser_mobile(user_mobile);
-        userInfo.setUser_age(user_age);
-        userInfo.setUser_gender("Gender");
+        //final String user_gender = "gender given".toString().trim();
 
-        MyApplication.getRealm().copyToRealm(userInfo);
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        intent.putExtra("mobile", user_mobile);
+        intent.putExtra("age", user_age);
+        intent.putExtra("gender", user_gender);
+        startActivity(intent);
 
-        MyApplication.getRealm().commitTransaction();
+       }
 
-        Toast.makeText(UserInfoActivity.this, "Insert successfully ...", Toast.LENGTH_SHORT).show();
-    }
 
 }

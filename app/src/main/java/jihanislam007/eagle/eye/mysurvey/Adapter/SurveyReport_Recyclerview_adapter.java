@@ -15,6 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import jihanislam007.eagle.eye.mysurvey.Adapter.Model.SurveyReport;
+import jihanislam007.eagle.eye.mysurvey.DB.Model.UserInfo;
 import jihanislam007.eagle.eye.mysurvey.R;
 
 
@@ -51,9 +52,15 @@ public class SurveyReport_Recyclerview_adapter extends RecyclerView.Adapter<Surv
 */
         //  Log.e("image",categoryList.get(position).getCategoryImage());
 
-        holder.userMobile.setText(categoryList.get(position).getUser_mobile());
-        holder.userGender.setText(categoryList.get(position).getUser_gender());
-        holder.userAge.setText(categoryList.get(position).getUser_age());
+        holder.userMobile.setText(categoryList.get(position).getReport_mobile());
+        holder.userGender.setText(categoryList.get(position).getReport_gender());
+        holder.userAge.setText(categoryList.get(position).getReport_age());
+
+    //    holder.a1.setText(categoryList.get(position).getQ_one());
+        /*holder.a2.setText(categoryList.get(position).getQ2());
+        holder.a3.setText(categoryList.get(position).getQ3());
+        holder.a4.setText(categoryList.get(position).getQ4());
+        holder.a5.setText(categoryList.get(position).getQ5());*/
 
     //    holder.catagoryCounterTV.setText(String.valueOf(categoryList.get(position).getCounter()));
 
@@ -111,6 +118,7 @@ public class SurveyReport_Recyclerview_adapter extends RecyclerView.Adapter<Surv
 
         LinearLayout backgroundLinearLayout;
         TextView userMobile,userGender,userAge;
+        TextView a1,a2,a3,a4,a5;
         ImageView backgroundImageView,CategoryItemImageView;
 
         public myViewHolder(View itemView) {
@@ -123,6 +131,12 @@ public class SurveyReport_Recyclerview_adapter extends RecyclerView.Adapter<Surv
             userMobile = itemView.findViewById(R.id.User_tv_mobile);
             userGender = itemView.findViewById(R.id.User_tv_gender);
             userAge = itemView.findViewById(R.id.User_tv_age);
+
+            a1 = itemView.findViewById(R.id.a1);
+            a2 = itemView.findViewById(R.id.a2);
+            a3 = itemView.findViewById(R.id.a3);
+            a4 = itemView.findViewById(R.id.a4);
+            a5 = itemView.findViewById(R.id.a5);
 
 
         }

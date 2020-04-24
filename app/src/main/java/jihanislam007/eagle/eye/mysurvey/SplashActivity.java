@@ -23,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 // TODO Auto-generated method stub
                 try {
-                    sleep(1000);
+                    sleep(5000);
                     /*startActivity(new Intent(getApplicationContext(),
                             MainActivity.class));
                     finish();*/

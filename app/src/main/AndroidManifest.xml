@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SurveyReportActivity"></activity>
+        <activity android:name=".SurveyQuestionActivity"></activity>
+        <activity android:name=".SurveyReportActivity" />
         <activity android:name=".UserInfoActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>

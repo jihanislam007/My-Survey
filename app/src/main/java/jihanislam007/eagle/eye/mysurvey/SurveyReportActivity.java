@@ -18,7 +18,7 @@ import jihanislam007.eagle.eye.mysurvey.databinding.ActivitySurveyreportBinding;
 
 import static java.security.AccessController.getContext;
 
-public class SurveyReportActivity extends AppCompatActivity {
+public  class SurveyReportActivity extends AppCompatActivity {
 
     ActivitySurveyreportBinding binding;
     Realm realm;
@@ -39,7 +39,7 @@ public class SurveyReportActivity extends AppCompatActivity {
 
         CategoryDataserver();
 
-        retrieveData();
+    //    retrieveData();
 
     }
 
@@ -50,7 +50,7 @@ public class SurveyReportActivity extends AppCompatActivity {
         realm = Realm.getDefaultInstance();
 
         for (UserInfo model : loginModels) {
-             //   users.setText("");
+            //   users.setText("");
             /*binding.UserTvMobile.append(model.getUser_mobile() );
             binding.UserTvGender.append(model.getUser_gender() );
             binding.UserTvAge.append(model.getUser_age() + "\n");*/
@@ -65,20 +65,17 @@ public class SurveyReportActivity extends AppCompatActivity {
 
         /*SurveyReport data1 = new SurveyReport("01234567","male","10");
         categoryList.add(data1);
-
         SurveyReport data2 = new SurveyReport("01234567","male","11");
         categoryList.add(data2);
-
         SurveyReport data3 = new SurveyReport("01234567","male","12");
         categoryList.add(data3);
-
         SurveyReport data4 = new SurveyReport("01234567","male","13");
         categoryList.add(data4);*/
 
 
     }
 
-    private void retrieveData() {
+    /*private void retrieveData() {
 
         RealmResults<UserInfo> loginModels = MyApplication.getRealm().where(UserInfo.class).findAll();
 
@@ -86,12 +83,12 @@ public class SurveyReportActivity extends AppCompatActivity {
 
         for (UserInfo model : loginModels) {
             //    users.setText("");
-            /*binding.UserTvMobile.append(model.getUser_mobile() );
+            *//*binding.UserTvMobile.append(model.getUser_mobile() );
             binding.UserTvGender.append(model.getUser_gender() );
-            binding.UserTvAge.append(model.getUser_age() + "\n");*/
+            binding.UserTvAge.append(model.getUser_age() + "\n");*//*
 
 
         }
 
-    }
+    }*/
 }

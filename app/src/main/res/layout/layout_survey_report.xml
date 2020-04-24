@@ -20,54 +20,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mobile Number : "
-                android:fontFamily="@font/roboto"
-                android:textStyle="bold"
-                android:textSize="18dp"/>
-
-            <TextView
-                android:id="@+id/User_tv_mobile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="01xxxxxxxxx"
-                android:fontFamily="@font/roboto"
-                android:textStyle="normal"
-                android:textSize="16dp"/>
-
-        </LinearLayout>
+        android:padding="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/colorPrimary">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Gender : "
+                    android:text="Mobile Number : "
                     android:fontFamily="@font/roboto"
                     android:textStyle="bold"
                     android:textSize="18dp"/>
 
                 <TextView
-                    android:id="@+id/User_tv_gender"
+                    android:id="@+id/User_tv_mobile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="M"
+                    android:text="01xxxxxxxxx"
                     android:fontFamily="@font/roboto"
                     android:textStyle="normal"
                     android:textSize="16dp"/>
@@ -75,26 +53,378 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Age : "
-                    android:fontFamily="@font/roboto"
-                    android:textStyle="bold"
-                    android:textSize="18dp"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
 
-                <TextView
-                    android:id="@+id/User_tv_age"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gender : "
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:textSize="18dp"/>
+
+                    <TextView
+                        android:id="@+id/User_tv_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="M"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="normal"
+                        android:textSize="16dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Age : "
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:textSize="18dp"/>
+
+                    <TextView
+                        android:id="@+id/User_tv_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="normal"
+                        android:textSize="16dp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question : "
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:textSize="18dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1. Name of the facility in which you work"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="normal"
+                        android:textSize="16dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="10"
-                    android:fontFamily="@font/roboto"
-                    android:textStyle="normal"
-                    android:textSize="16dp"/>
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Answer : "
+                            android:fontFamily="@font/roboto"
+                            android:textStyle="bold"
+                            android:textSize="18dp"/>
+
+                        <TextView
+                            android:id="@+id/a1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:fontFamily="@font/roboto"
+                            android:textStyle="normal"
+                            android:textSize="16dp"/>
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question : "
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:textSize="18dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="01xxxxxxxxx"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="normal"
+                        android:textSize="16dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Answer : "
+                            android:fontFamily="@font/roboto"
+                            android:textStyle="bold"
+                            android:textSize="18dp"/>
+
+                        <TextView
+                            android:id="@+id/a2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:fontFamily="@font/roboto"
+                            android:textStyle="normal"
+                            android:textSize="16dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question : "
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:textSize="18dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="01xxxxxxxxx"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="normal"
+                        android:textSize="16dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Answer : "
+                            android:fontFamily="@font/roboto"
+                            android:textStyle="bold"
+                            android:textSize="18dp"/>
+
+                        <TextView
+                            android:id="@+id/a3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:fontFamily="@font/roboto"
+                            android:textStyle="normal"
+                            android:textSize="16dp"/>
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question : "
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:textSize="18dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="01xxxxxxxxx"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="normal"
+                        android:textSize="16dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Answer : "
+                            android:fontFamily="@font/roboto"
+                            android:textStyle="bold"
+                            android:textSize="18dp"/>
+
+                        <TextView
+                            android:id="@+id/a4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:fontFamily="@font/roboto"
+                            android:textStyle="normal"
+                            android:textSize="16dp"/>
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question : "
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:textSize="18dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="01xxxxxxxxx"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="normal"
+                        android:textSize="16dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Answer : "
+                            android:fontFamily="@font/roboto"
+                            android:textStyle="bold"
+                            android:textSize="18dp"/>
+
+                        <TextView
+                            android:id="@+id/a5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:fontFamily="@font/roboto"
+                            android:textStyle="normal"
+                            android:textSize="16dp"/>
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
 
             </LinearLayout>
 
