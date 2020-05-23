@@ -21,7 +21,7 @@ public class MyApplication extends Application{
         if(realm==null){
             RealmConfiguration realmConfiguration = new RealmConfiguration
                     .Builder()
-                    .name("survey.realm")
+                    .name("survey_one.realm")
                     .deleteRealmIfMigrationNeeded()
                     .build();
             try {

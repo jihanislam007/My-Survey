@@ -85,7 +85,7 @@ public class UserInfoActivity extends AppCompatActivity implements
 
         //final String user_gender = "gender given".toString().trim();
 
-        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        Intent intent = new Intent(getApplicationContext(),SurveyQuestionActivity.class);
         intent.putExtra("mobile", user_mobile);
         intent.putExtra("age", user_age);
         intent.putExtra("gender", user_gender);

@@ -35,7 +35,7 @@ public class SplashActivity extends AppCompatActivity {
                             if (isConnected()) {
                                 //  Toast.makeText(getApplicationContext(), "Internet Connected", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(),
-                                        UserInfoActivity.class));
+                                        LoginActivity.class));
                                 finish();
                             } else {
                                 Toast.makeText(getApplicationContext(), "Please check Internet Connection ...", Toast.LENGTH_SHORT).show();

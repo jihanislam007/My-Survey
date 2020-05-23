@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -118,8 +117,6 @@ public class MainActivity extends AppCompatActivity {
         q3 = findViewById(R.id.q3);
         q4 = findViewById(R.id.q4);
         q5 = findViewById(R.id.q5);
-
-
 
         q11 = q1.getText().toString();
         String q22 = q2.getText().toString();
