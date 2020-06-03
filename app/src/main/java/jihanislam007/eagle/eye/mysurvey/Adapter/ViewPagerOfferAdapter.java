@@ -2,14 +2,12 @@ package jihanislam007.eagle.eye.mysurvey.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -17,22 +15,19 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import jihanislam007.eagle.eye.mysurvey.Adapter.Model.viewPagerDataModel;
-import jihanislam007.eagle.eye.mysurvey.DB.Model.SurveyQuestion;
-import jihanislam007.eagle.eye.mysurvey.LoginActivity;
-import jihanislam007.eagle.eye.mysurvey.MainActivity;
+import jihanislam007.eagle.eye.mysurvey.Adapter.Model.viewPagerOfferDataModel;
 import jihanislam007.eagle.eye.mysurvey.R;
-import jihanislam007.eagle.eye.mysurvey.UserInfoActivity;
+import jihanislam007.eagle.eye.mysurvey.SingleSurveyQuesActivity;
 
 
-public class ViewPagerAdapter extends PagerAdapter {
+public class ViewPagerOfferAdapter extends PagerAdapter {
 
     private Context context;
-    private ArrayList<viewPagerDataModel> sliderImg;
+    private ArrayList<viewPagerOfferDataModel> sliderImg;
   //  private ImageLoader imageLoader;
 
 
-    public ViewPagerAdapter(Context context,ArrayList sliderImg ) {
+    public ViewPagerOfferAdapter(Context context, ArrayList sliderImg ) {
         this.context = context;
         this.sliderImg = sliderImg;
     }
@@ -84,7 +79,7 @@ public class ViewPagerAdapter extends PagerAdapter {
             @Override
             public void onClick(View v) {
 
-                context.startActivity(new Intent(context, UserInfoActivity.class));
+                context.startActivity(new Intent(context, SingleSurveyQuesActivity.class));
 
                 /*Bundle bundle=new Bundle();
                 bundle.putInt("category_id",sliderImg.get(position).id);

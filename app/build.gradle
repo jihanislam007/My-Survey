@@ -43,8 +43,13 @@ dependencies {
 
     //card view
     implementation 'androidx.cardview:cardview:1.0.0'
+
+    /**/
+    /gmail login*/
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
 
+    /**Facebook login*/
+    implementation 'com.facebook.android:facebook-login:[5,6)'
 
     implementation 'com.loopj.android:android-async-http:1.4.9'
     implementation 'com.github.bumptech.glide:glide:3.8.0'
@@ -52,5 +57,8 @@ dependencies {
     //Todo viewpager animation
     implementation 'com.github.devlight:infinitecycleviewpager:1.0.2'
 
+    //Todo CircleImageView
+    //implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 }

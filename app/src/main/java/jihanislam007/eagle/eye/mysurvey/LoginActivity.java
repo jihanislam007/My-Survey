@@ -7,9 +7,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -22,23 +30,54 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.Task;
 
-public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
+import java.util.Arrays;
 
-    /*int RC_SIGN_IN = 0;
-    SignInButton signInButton;
-    GoogleSignInClient mGoogleSignInClient;*/
+public class LoginActivity extends AppCompatActivity /*implements GoogleApiClient.OnConnectionFailedListener*/{
 
+    int RC_SIGN_IN = 0;
     SignInButton signInButton;
+    GoogleSignInClient mGoogleSignInClient;
+
+    /*SignInButton signInButton;
     private GoogleApiClient googleApiClient;
     TextView textView;
-    private static final int RC_SIGN_IN = 1;
+    private static final int RC_SIGN_IN = 1;*/
+
+    private CallbackManager callbackManager;
+    private static final String EMAIL = "email";
+    Button loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        GoogleSignInOptions gso =  new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        /** Facebook Login*/
+
+        callbackManager = CallbackManager.Factory.create();
+
+        loginButton = (LoginButton) findViewById(R.id.login_button);
+        ((LoginButton) loginButton).setReadPermissions(Arrays.asList(EMAIL,"Public profile"));
+
+        LoginManager.getInstance().registerCallback(callbackManager,
+                new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        // App code
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        // App code
+                    }
+
+                    @Override
+                    public void onError(FacebookException exception) {
+                        // App code
+                    }
+                });
+
+       /* GoogleSignInOptions gso =  new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
         googleApiClient=new GoogleApiClient.Builder(this)
@@ -82,16 +121,16 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
     }
-}
+}*/
 
-        //Todo/////////////////////////////////////////
+        //Todo///////////////Gmail Login//////////////////////////
 
-       /* *//*signInButton = findViewById(R.id.sign_in_button);
+        signInButton = findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        /*GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
 
@@ -101,10 +140,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
      //   updateUI(account);
 
-     //   findViewById(R.id.sign_in_button).setOnClickListener(this);*//*
+     //   findViewById(R.id.sign_in_button).setOnClickListener(this);
 
         //Initializing Views
-        signInButton = findViewById(R.id.sign_in_button);
+        signInButton = findViewById(R.id.sign_in_button);*/
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -131,6 +170,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        /***for FB login only*/
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        /***for FB login only*/
         super.onActivityResult(requestCode, resultCode, data);
 
         // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
@@ -166,4 +208,16 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         super.onStart();
     }
 
-}*/
+    /***** For FaceBook*/
+
+    /*@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+    }*/
+
+    AccessToken accessToken = AccessToken.getCurrentAccessToken();
+    boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
+
+
+}

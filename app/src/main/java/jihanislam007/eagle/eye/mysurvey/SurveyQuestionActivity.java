@@ -46,7 +46,7 @@ public class SurveyQuestionActivity extends AppCompatActivity {
         binding.btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // SaveData();
+                SaveData();
                // checkData();
             }
 

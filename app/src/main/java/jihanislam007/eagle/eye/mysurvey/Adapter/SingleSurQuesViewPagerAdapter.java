@@ -2,14 +2,12 @@ package jihanislam007.eagle.eye.mysurvey.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -17,22 +15,20 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import jihanislam007.eagle.eye.mysurvey.Adapter.Model.singleSurveyQues;
 import jihanislam007.eagle.eye.mysurvey.Adapter.Model.viewPagerDataModel;
-import jihanislam007.eagle.eye.mysurvey.DB.Model.SurveyQuestion;
-import jihanislam007.eagle.eye.mysurvey.LoginActivity;
-import jihanislam007.eagle.eye.mysurvey.MainActivity;
 import jihanislam007.eagle.eye.mysurvey.R;
 import jihanislam007.eagle.eye.mysurvey.UserInfoActivity;
 
 
-public class ViewPagerAdapter extends PagerAdapter {
+public class SingleSurQuesViewPagerAdapter extends PagerAdapter {
 
     private Context context;
-    private ArrayList<viewPagerDataModel> sliderImg;
+    private ArrayList<singleSurveyQues> sliderImg;
   //  private ImageLoader imageLoader;
 
 
-    public ViewPagerAdapter(Context context,ArrayList sliderImg ) {
+    public SingleSurQuesViewPagerAdapter(Context context, ArrayList sliderImg ) {
         this.context = context;
         this.sliderImg = sliderImg;
     }
@@ -58,33 +54,40 @@ public class ViewPagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup  collection, final int position) {
         LayoutInflater inflater = (LayoutInflater) collection.getContext()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.layout_viewpager_dashboard, null);
+        View view = inflater.inflate(R.layout.layout_survey_single_question, null);
 
         ImageView imageView = (ImageView) view.findViewById(R.id.iv_item_image);
-        TextView TV_title = view.findViewById(R.id.tv_title_top_story);
-        TextView TV_date = view.findViewById(R.id.tv_date_top_story);
+        TextView tv_question = view.findViewById(R.id.tv_question);
+        TextView tv_optionOne = view.findViewById(R.id.tv_optionOne);
+        TextView tv_optionTwo = view.findViewById(R.id.tv_optionTwo);
+        TextView tv_optionThree = view.findViewById(R.id.tv_optionThree);
+        TextView tv_optionFour = view.findViewById(R.id.tv_optionFour);
 
-        TV_title.setText(sliderImg.get(position).getTitle());
+        tv_question.setText(sliderImg.get(position).getQuestion());
+        tv_optionOne.setText(sliderImg.get(position).getOptionOne());
+        tv_optionTwo.setText(sliderImg.get(position).getOptionTwo());
+        tv_optionThree.setText(sliderImg.get(position).getOptionThree());
+        tv_optionFour.setText(sliderImg.get(position).getOptionFour());
        // TV_date.setText(sliderImg.get(position).getDate());
 
         /*Glide.with(context)
                 .load(sliderImg.get(position).getImageURL())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(imageView);*/
-        try {
+        /*try {
             Glide.with(context)
                     .load(sliderImg.get(position).getImageUrl())
                     .error(R.drawable.rectangular_shape_bacground)
                     .into(imageView);
         } catch (Exception e1) {
             e1.printStackTrace();
-        }
+        }*/
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                context.startActivity(new Intent(context, UserInfoActivity.class));
+               // context.startActivity(new Intent(context, UserInfoActivity.class));
 
                 /*Bundle bundle=new Bundle();
                 bundle.putInt("category_id",sliderImg.get(position).id);

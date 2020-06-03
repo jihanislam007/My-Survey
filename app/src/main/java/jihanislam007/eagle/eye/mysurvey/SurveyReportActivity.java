@@ -49,28 +49,28 @@ public  class SurveyReportActivity extends AppCompatActivity {
 
         realm = Realm.getDefaultInstance();
 
-        for (UserInfo model : loginModels) {
+        /*for (UserInfo model : loginModels) {
             //   users.setText("");
-            /*binding.UserTvMobile.append(model.getUser_mobile() );
+            *//*binding.UserTvMobile.append(model.getUser_mobile() );
             binding.UserTvGender.append(model.getUser_gender() );
-            binding.UserTvAge.append(model.getUser_age() + "\n");*/
+            binding.UserTvAge.append(model.getUser_age() + "\n");*//*
 
 
 
             SurveyReport data = new SurveyReport(model.getUser_mobile(),model.getUser_gender(),model.getUser_age());
             categoryList.add(data);
 
-            //categoryList.clear();
-        }
+            categoryList.clear();
+        }*/
 
-        /*SurveyReport data1 = new SurveyReport("01234567","male","10");
+        SurveyReport data1 = new SurveyReport("01234567","male","10");
         categoryList.add(data1);
         SurveyReport data2 = new SurveyReport("01234567","male","11");
         categoryList.add(data2);
         SurveyReport data3 = new SurveyReport("01234567","male","12");
         categoryList.add(data3);
         SurveyReport data4 = new SurveyReport("01234567","male","13");
-        categoryList.add(data4);*/
+        categoryList.add(data4);
 
 
     }

@@ -18,4 +18,8 @@
         <item>Female</item>
     </string-array>
 
+    <!--Todo for Facebook login-->
+    <string name="facebook_app_id">587927468515432</string>
+    <string name="fb_login_protocol_scheme">fb587927468515432</string>
+
 </resources>

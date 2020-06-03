@@ -5,12 +5,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashboardActivity">
+    tools:context=".DashboardActivity"
+    android:padding="16dp"
+    android:background="#E4E4E4">
 
     <LinearLayout
+        android:id="@+id/ll_login_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorWhite">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <!--<ImageView
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_menu_gallery"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"/>-->
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/photo"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/report"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: NAME HERE"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email: EMAIL HERE"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID: ID HERE"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimary"/>
+
+        </LinearLayout>
+
+        <!--<com.gigamole.infinitecycleviewpager.VerticalViewPager
+            android:id="@+id/photo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/rectangle_shadow_black"
+            android:layout_gravity="center"/>-->
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_offer"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_below="@+id/ll_login_info">
 
         <!--<androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPager"
@@ -33,6 +116,44 @@
 
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/ll_offer">
+
+        <!--<androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>-->
+
+        <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
+            android:id="@+id/viewPager_offer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"
+            app:icvp_scroll_duration="250"
+            app:icvp_center_page_scale_offset="30dp"
+            app:icvp_min_page_scale_offset="5dp"
+            app:icvp_max_page_scale="0.8"
+            app:icvp_min_page_scale=".55"
+            app:icvp_medium_scaled="false"
+            android:forceHasOverlappingRendering="true"
+            />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/log_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign out"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff"/>
 
 </RelativeLayout>
 </layout>
